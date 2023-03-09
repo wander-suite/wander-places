@@ -1,0 +1,21 @@
+name: Build Places Service
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+      - dev
+  push:
+    branches:
+      - main
+      - dev
+
+permissions:
+  contents: read
+  pull-requests: read
+  security-events: write
+
+jobs:
+  call-service-workflow:
+    uses: wander-suite/wander-devops/.github/workflows/service-workflow.yml@main
